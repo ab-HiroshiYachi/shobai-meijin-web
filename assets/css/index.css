@@ -17,6 +17,46 @@
   max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 var(--content-padding);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.p-hero__visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: linear-gradient(155deg, #FFFFFF 0%, #F7F4EC 55%, #EDE6D5 100%);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 32px;
+}
+
+.p-hero__visual svg {
+  width: 46%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .p-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .p-hero__visual {
+    order: -1;
+    aspect-ratio: 16 / 11;
+  }
 }
 
 .p-hero__kicker {
@@ -406,7 +446,7 @@
 
 .p-reasons__item {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 64px 1fr;
   gap: 32px;
   align-items: start;
   padding: 40px 0;
@@ -422,12 +462,17 @@
 }
 
 .p-reasons__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--color-seal);
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-seal);
   line-height: 1;
-  letter-spacing: 0.02em;
 }
 
 .p-reasons__item h3 {
@@ -449,7 +494,9 @@
   }
 
   .p-reasons__number {
-    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
   }
 }
 
@@ -642,44 +689,42 @@
 }
 
 .p-greeting__vow {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  margin: 44px 0;
-  padding: 30px 34px;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  margin: 56px 0;
+  padding: 12px 0;
+  text-align: center;
 }
 
-.p-greeting__vow-lines {
+.p-greeting__vow-poem {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.p-greeting__vow-poem span {
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-family: var(--font-serif);
-  font-size: 1.1875rem;
-  letter-spacing: 0.28em;
-  line-height: 2.3;
+  font-size: 1.3125rem;
+  letter-spacing: 0.24em;
+  line-height: 2.2;
   color: var(--color-indigo);
-  height: 220px;
-  flex-shrink: 0;
-}
-
-.p-greeting__vow-note {
-  font-size: 0.9063rem;
-  color: var(--color-text-soft);
-  align-self: center;
-  line-height: 1.9;
 }
 
 @media (max-width: 620px) {
-  .p-greeting__vow {
+  .p-greeting__vow-poem {
     flex-direction: column;
+    align-items: center;
+    gap: 4px;
   }
 
-  .p-greeting__vow-lines {
+  .p-greeting__vow-poem span {
     writing-mode: horizontal-tb;
-    height: auto;
-    letter-spacing: 0.14em;
-    font-size: 1.0625rem;
+    text-orientation: mixed;
+    letter-spacing: 0.1em;
+    font-size: 1.1875rem;
+    line-height: 1.9;
   }
 }
 

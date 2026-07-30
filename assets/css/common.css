@@ -5,18 +5,18 @@
 
 /* ---------- デザイントークン ---------- */
 :root {
-  /* カラー（和紙 × インディゴ × 朱色の印章） */
-  --color-bg: #EFE9DA;
-  --color-bg-soft: #E5DED0;
+  /* カラー（和紙 × インディゴ × 朱色の印章 / 明るめトーン） */
+  --color-bg: #FBF9F3;
+  --color-bg-soft: #F2EEE2;
   --color-bg-deep: #16232C;
   --color-bg-deep-soft: #1E2E38;
   --color-text: #23211D;
   --color-text-soft: #5B574C;
   --color-text-inverse: #EEE7D6;
-  --color-border: rgba(35, 33, 29, 0.14);
+  --color-border: rgba(35, 33, 29, 0.12);
   --color-border-deep: rgba(238, 231, 214, 0.16);
-  --color-indigo: #2B4560;
-  --color-indigo-deep: #1C3247;
+  --color-indigo: #2F5C86;
+  --color-indigo-deep: #1F3F5C;
   --color-seal: #A83932;
   --color-moss: #5F6F4E;
   --color-white: #FFFFFF;
