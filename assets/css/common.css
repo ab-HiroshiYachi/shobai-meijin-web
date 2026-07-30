@@ -1,0 +1,604 @@
+/* ==========================================================================
+   common.css — 商売名人 コーポレートサイト
+   デザイントークン（カラー / フォント / 余白）と共通コンポーネント
+   ========================================================================== */
+
+/* ---------- デザイントークン ---------- */
+:root {
+  /* カラー（和紙 × インディゴ × 朱色の印章） */
+  --color-bg: #EFE9DA;
+  --color-bg-soft: #E5DED0;
+  --color-bg-deep: #16232C;
+  --color-bg-deep-soft: #1E2E38;
+  --color-text: #23211D;
+  --color-text-soft: #5B574C;
+  --color-text-inverse: #EEE7D6;
+  --color-border: rgba(35, 33, 29, 0.14);
+  --color-border-deep: rgba(238, 231, 214, 0.16);
+  --color-indigo: #2B4560;
+  --color-indigo-deep: #1C3247;
+  --color-seal: #A83932;
+  --color-moss: #5F6F4E;
+  --color-white: #FFFFFF;
+
+  /* 互換エイリアス（既存コンポーネント用） */
+  --color-primary: var(--color-indigo);
+  --color-primary-dark: var(--color-indigo-deep);
+  --color-accent: var(--color-seal);
+  --color-bg-alt: var(--color-bg-soft);
+
+  /* フォント */
+  --font-sans: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  --font-serif: "Shippori Mincho B1", "Hiragino Mincho ProN", serif;
+
+  /* タイプスケール(PC) */
+  --fs-h1: 2.75rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-caption: 0.8125rem;
+
+  /* レイアウト */
+  --content-max: 1160px;
+  --content-padding: 24px;
+  --section-py: 128px;
+  --radius-card: 2px;
+  --radius-btn: 2px;
+  --radius-tag: 2px;
+
+  /* 影・トランジション */
+  --shadow-card: 0 2px 4px rgba(35, 33, 29, 0.04);
+  --shadow-card-hover: 0 16px 32px rgba(22, 35, 44, 0.12);
+  --transition-base: 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --header-height: 84px;
+}
+
+/* SPでのタイプスケール・余白 */
+@media (max-width: 767px) {
+  :root {
+    --fs-h1: 1.875rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.0625rem;
+    --fs-body: 1rem;
+    --fs-caption: 0.8125rem;
+    --section-py: 72px;
+    --header-height: 64px;
+  }
+}
+
+/* ---------- ベース ---------- */
+html {
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.9;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+
+a {
+  transition: color var(--transition-base), opacity var(--transition-base);
+}
+
+/* フォーカス表示は消さない */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-seal);
+  outline-offset: 3px;
+}
+
+img {
+  border-radius: 0;
+}
+
+::selection {
+  background-color: var(--color-seal);
+  color: #fff;
+}
+
+/* ---------- レイアウトユーティリティ ---------- */
+.l-container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+}
+
+.l-section {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.l-section--bg {
+  background-color: var(--color-bg-soft);
+}
+
+.l-section--dark {
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-inverse);
+}
+
+.l-section--dark h2,
+.l-section--dark h3,
+.l-section--dark p {
+  color: var(--color-text-inverse);
+}
+
+/* ---------- 見出し共通（eyebrow ラベル） ---------- */
+.c-section-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.c-section-head__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--color-seal);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.c-section-head__label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-seal);
+}
+
+.c-section-head__title {
+  font-size: var(--fs-h2);
+}
+
+.c-section-head__lead {
+  margin-top: 20px;
+  font-size: 0.9688rem;
+  line-height: 2;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 767px) {
+  .c-section-head {
+    margin-bottom: 40px;
+  }
+}
+
+/* ---------- ボタン ---------- */
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 14px 36px;
+  border-radius: var(--radius-btn);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
+  white-space: nowrap;
+}
+
+.c-btn--primary {
+  background-color: var(--color-seal);
+  color: var(--color-text-inverse);
+  box-shadow: 0 1px 2px rgba(22, 35, 44, 0.12);
+}
+
+.c-btn--primary:hover {
+  background-color: var(--color-indigo-deep);
+  box-shadow: 0 8px 20px rgba(22, 35, 44, 0.22);
+}
+
+.c-btn--outline {
+  background-color: transparent;
+  color: var(--color-indigo);
+  border: 1px solid var(--color-indigo);
+}
+
+.c-btn--outline:hover {
+  background-color: var(--color-indigo);
+  color: var(--color-text-inverse);
+}
+
+.l-section--dark .c-btn--outline {
+  color: var(--color-text-inverse);
+  border-color: rgba(238, 231, 214, 0.5);
+}
+
+.l-section--dark .c-btn--outline:hover {
+  background-color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+  color: var(--color-indigo-deep);
+}
+
+/* ---------- カード ---------- */
+.c-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  box-shadow: none;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.c-card:hover {
+  border-color: var(--color-seal);
+}
+
+/* ---------- タグ / ラベル ---------- */
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 9px 18px;
+  border-radius: var(--radius-tag);
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+/* ---------- 印章（ハンコ）モチーフ ---------- */
+.c-hanko {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.c-hanko--lg {
+  width: 108px;
+  height: 108px;
+}
+
+/* ---------- パンくずリスト ---------- */
+.c-breadcrumb {
+  font-size: var(--fs-caption);
+  padding: 20px 0;
+}
+
+.c-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.c-breadcrumb a {
+  color: var(--color-indigo);
+}
+
+.c-breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 6px;
+  color: var(--color-border);
+}
+
+/* ---------- ヘッダー ---------- */
+.l-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: rgba(239, 233, 218, 0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.l-header__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.c-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+}
+
+.c-logo small {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  color: var(--color-text-soft);
+  font-weight: 500;
+}
+
+.c-logo img {
+  height: 32px;
+  width: auto;
+}
+
+@media (max-width: 767px) {
+  .c-logo img {
+    height: 26px;
+  }
+
+  .c-logo small {
+    display: none;
+  }
+}
+
+.l-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.l-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.l-nav__list a {
+  position: relative;
+  padding: 4px 0;
+  color: var(--color-text-soft);
+}
+
+.l-nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-seal);
+  transition: width var(--transition-base);
+}
+
+.l-nav__list a:hover {
+  color: var(--color-text);
+}
+
+.l-nav__list a:hover::after {
+  width: 100%;
+}
+
+.l-header__cta {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  min-height: 44px;
+  font-size: 0.9375rem;
+}
+
+.c-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.c-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-text);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.c-hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.c-hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.c-hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1023px) {
+  .l-nav {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background-color: var(--color-bg);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px var(--content-padding);
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+  }
+
+  .l-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .l-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 1.0625rem;
+  }
+
+  .l-nav__list a {
+    display: block;
+    padding: 14px 4px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .l-header__cta {
+    display: none;
+  }
+
+  .l-nav__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .c-hamburger {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .l-nav__cta {
+    display: none;
+  }
+}
+
+/* ---------- フッター ---------- */
+.l-footer {
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-inverse);
+  padding: 72px 0 32px;
+  border-top: 1px solid var(--color-border-deep);
+}
+
+.l-footer a {
+  color: var(--color-text-inverse);
+}
+
+.l-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--color-border-deep);
+}
+
+.l-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.l-footer__brand .c-logo {
+  color: var(--color-text-inverse);
+}
+
+.l-footer__brand .c-logo small {
+  color: rgba(238, 231, 214, 0.45);
+}
+
+.l-footer__address {
+  font-size: var(--fs-caption);
+  line-height: 1.9;
+  opacity: 0.7;
+}
+
+.l-footer__heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  opacity: 0.55;
+}
+
+.l-footer__list li {
+  margin-bottom: 10px;
+  font-size: 0.9375rem;
+}
+
+.l-footer__bottom {
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-caption);
+  opacity: 0.4;
+}
+
+@media (max-width: 767px) {
+  .l-footer {
+    padding: 56px 0 24px;
+  }
+
+  .l-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .l-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- スクロールフェードイン ---------- */
+.js-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.js-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- スキップリンク ---------- */
+.c-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-inverse);
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-btn) 0;
+}
+
+.c-skip-link:focus {
+  left: 0;
+}
