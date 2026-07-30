@@ -122,40 +122,24 @@
 
       <!-- TODO: 将来的に実写の業務イメージ画像へ差し替え可能です -->
       <div class="p-hero__visual js-fade" aria-hidden="true">
-        <svg viewBox="0 0 400 320" role="img" aria-label="欠けたピースが答えとしてはまるパズルのイメージ図解">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商売名人のブランドカラーによる抽象グラフィック">
           <defs>
-            <path id="piece" d="M0,0 H80 V32 A12,12 0 0 1 80,56 V80 H0 Z"></path>
-            <filter id="tileShadow" x="-40%" y="-40%" width="180%" height="180%">
-              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1F3F5C" flood-opacity="0.12"></feDropShadow>
+            <filter id="heroBlur" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="42"></feGaussianBlur>
             </filter>
-            <filter id="pieceShadow" x="-60%" y="-60%" width="220%" height="220%">
-              <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1F3F5C" flood-opacity="0.32"></feDropShadow>
+            <filter id="heroGrain" x="0" y="0" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"></feTurbulence>
+              <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.14  0 0 0 0 0.13  0 0 0 0 0.11  0 0 0 0.05 0"></feColorMatrix>
             </filter>
           </defs>
 
-          <!-- 組み上がったピース(1つだけ空きがある) -->
-          <g fill="#FFFFFF" stroke="rgba(47,92,134,0.28)" stroke-width="1.5" filter="url(#tileShadow)">
-            <use href="#piece" transform="translate(10,20) rotate(-2,40,40)"></use>
-            <use href="#piece" transform="translate(110,20) rotate(2,40,40)"></use>
-            <use href="#piece" transform="translate(210,20) rotate(-1,40,40)"></use>
-            <use href="#piece" transform="translate(310,20) rotate(3,40,40)"></use>
-
-            <use href="#piece" transform="translate(10,120) rotate(1,40,40)"></use>
-            <use href="#piece" transform="translate(110,120) rotate(-3,40,40)"></use>
-            <!-- (210,120) は空き -->
-            <use href="#piece" transform="translate(310,120) rotate(2,40,40)"></use>
-
-            <use href="#piece" transform="translate(10,220) rotate(-2,40,40)"></use>
-            <use href="#piece" transform="translate(110,220) rotate(3,40,40)"></use>
-            <use href="#piece" transform="translate(210,220) rotate(-1,40,40)"></use>
-            <use href="#piece" transform="translate(310,220) rotate(1,40,40)"></use>
+          <g filter="url(#heroBlur)">
+            <path d="M110,40 C210,-10 320,30 345,130 C370,230 320,320 230,340 C140,360 60,320 45,230 C32,150 40,80 110,40 Z" fill="var(--color-indigo)" opacity="0.5"></path>
+            <path d="M240,190 C310,150 380,200 385,270 C390,350 320,410 250,395 C190,382 170,320 185,270 C192,240 205,208 240,190 Z" fill="var(--color-seal)" opacity="0.42" style="mix-blend-mode:multiply"></path>
+            <path d="M70,300 C130,275 195,300 205,360 C215,420 165,465 105,455 C55,447 30,400 40,360 C45,335 50,315 70,300 Z" fill="var(--color-moss)" opacity="0.38" style="mix-blend-mode:multiply"></path>
           </g>
 
-          <!-- 空きスロット -->
-          <rect x="210" y="120" width="80" height="80" rx="6" fill="none" stroke="rgba(47,92,134,0.25)" stroke-width="1.5" stroke-dasharray="4 6"></rect>
-
-          <!-- 答えとなるピース -->
-          <use href="#piece" fill="var(--color-seal)" transform="translate(226,90) rotate(10,40,40)" filter="url(#pieceShadow)"></use>
+          <rect x="0" y="0" width="400" height="500" filter="url(#heroGrain)" opacity="0.5"></rect>
         </svg>
       </div>
     </div>
