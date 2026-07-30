@@ -44,13 +44,6 @@
   text-align: center;
 }
 
-.p-hero__lead,
-.p-hero__meta,
-.p-hero__actions {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .p-hero__lead {
   text-align: left;
 }
@@ -89,7 +82,7 @@
 }
 
 .p-hero__lead {
-  margin: 30px 0 0;
+  margin: 30px auto 0;
   max-width: 560px;
   font-size: 1rem;
   line-height: 2;
