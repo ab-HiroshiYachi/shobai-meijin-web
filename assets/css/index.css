@@ -51,6 +51,10 @@
   margin-right: auto;
 }
 
+.p-hero__lead {
+  text-align: left;
+}
+
 .p-hero__kicker {
   justify-content: center;
   display: flex;
