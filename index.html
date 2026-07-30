@@ -120,14 +120,43 @@
         </div>
       </div>
 
-      <!-- TODO: ご提供予定の業務イメージ画像に差し替えてください -->
+      <!-- TODO: 将来的に実写の業務イメージ画像へ差し替え可能です -->
       <div class="p-hero__visual js-fade" aria-hidden="true">
-        <svg viewBox="0 0 200 200" role="img" aria-label="集客・採用・人材定着が重なり合うイメージ図形">
-          <circle cx="85" cy="80" r="55" fill="var(--color-indigo)" opacity="0.55"></circle>
-          <circle cx="120" cy="115" r="55" fill="var(--color-seal)" opacity="0.5"></circle>
-          <circle cx="80" cy="125" r="55" fill="var(--color-moss)" opacity="0.45"></circle>
+        <svg viewBox="0 0 400 320" role="img" aria-label="欠けたピースが答えとしてはまるパズルのイメージ図解">
+          <defs>
+            <path id="piece" d="M0,0 H80 V32 A12,12 0 0 1 80,56 V80 H0 Z"></path>
+            <filter id="tileShadow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1F3F5C" flood-opacity="0.12"></feDropShadow>
+            </filter>
+            <filter id="pieceShadow" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1F3F5C" flood-opacity="0.32"></feDropShadow>
+            </filter>
+          </defs>
+
+          <!-- 組み上がったピース(1つだけ空きがある) -->
+          <g fill="#FFFFFF" stroke="rgba(47,92,134,0.28)" stroke-width="1.5" filter="url(#tileShadow)">
+            <use href="#piece" transform="translate(10,20) rotate(-2,40,40)"></use>
+            <use href="#piece" transform="translate(110,20) rotate(2,40,40)"></use>
+            <use href="#piece" transform="translate(210,20) rotate(-1,40,40)"></use>
+            <use href="#piece" transform="translate(310,20) rotate(3,40,40)"></use>
+
+            <use href="#piece" transform="translate(10,120) rotate(1,40,40)"></use>
+            <use href="#piece" transform="translate(110,120) rotate(-3,40,40)"></use>
+            <!-- (210,120) は空き -->
+            <use href="#piece" transform="translate(310,120) rotate(2,40,40)"></use>
+
+            <use href="#piece" transform="translate(10,220) rotate(-2,40,40)"></use>
+            <use href="#piece" transform="translate(110,220) rotate(3,40,40)"></use>
+            <use href="#piece" transform="translate(210,220) rotate(-1,40,40)"></use>
+            <use href="#piece" transform="translate(310,220) rotate(1,40,40)"></use>
+          </g>
+
+          <!-- 空きスロット -->
+          <rect x="210" y="120" width="80" height="80" rx="6" fill="none" stroke="rgba(47,92,134,0.25)" stroke-width="1.5" stroke-dasharray="4 6"></rect>
+
+          <!-- 答えとなるピース -->
+          <use href="#piece" fill="var(--color-seal)" transform="translate(226,90) rotate(10,40,40)" filter="url(#pieceShadow)"></use>
         </svg>
-        <span>業務イメージ画像を配置</span>
       </div>
     </div>
   </section>
