@@ -99,48 +99,38 @@
 
   <!-- ================= FV ================= -->
   <section class="p-hero">
+    <!-- TODO: 将来的に実写の業務イメージ画像を検討する場合はこのdivを差し替え -->
+    <div class="p-hero__wash" aria-hidden="true">
+      <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="heroBlur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="55"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#heroBlur)">
+          <path d="M160,60 C260,10 370,50 395,150 C420,250 370,340 280,360 C190,380 100,340 80,250 C62,170 90,100 160,60 Z" fill="var(--color-indigo)" opacity="0.22"></path>
+          <path d="M290,220 C350,190 410,230 415,290 C420,360 360,410 300,395 C250,382 235,330 245,290 C250,265 265,235 290,220 Z" fill="var(--color-seal)" opacity="0.16"></path>
+        </g>
+      </svg>
+    </div>
+
     <div class="p-hero__inner">
-      <div>
-        <p class="p-hero__kicker js-fade">CORPORATE MESSAGE</p>
-        <h1 class="p-hero__catch js-fade">
-          商売の課題に、<br>
-          <em>答えをつくる。</em>
-        </h1>
-        <p class="p-hero__lead js-fade">
-          集客、採用、人材定着、営業、ブランディング。商売名人は、34年間の広告・出版・マーケティング経験を生かし、企業や店舗の成長を支援します。集客支援、採用支援、人材定着、Googleマップ運用、Instagram運用、営業支援、イベント企画まで、状況に応じて必要な支援を組み合わせます。
-        </p>
-        <div class="p-hero__meta js-fade">
-          <div class="p-hero__meta-item"><strong>34年</strong>広告・出版業での実績</div>
-          <div class="p-hero__meta-item"><strong>9つ</strong>の総合支援メニュー</div>
-          <div class="p-hero__meta-item"><strong>1つ</strong>の窓口で、集客から定着まで</div>
-        </div>
-        <div class="p-hero__actions js-fade">
-          <a href="/contact/" class="c-btn c-btn--primary">まずは相談する</a>
-          <a href="/service/" class="c-btn c-btn--outline">事業内容を見る</a>
-        </div>
+      <p class="p-hero__kicker js-fade">CORPORATE MESSAGE</p>
+      <h1 class="p-hero__catch js-fade">
+        商売の課題に、<br>
+        <em>答えをつくる。</em>
+      </h1>
+      <p class="p-hero__lead js-fade">
+        集客、採用、人材定着、営業、ブランディング。商売名人は、34年間の広告・出版・マーケティング経験を生かし、企業や店舗の成長を支援します。集客支援、採用支援、人材定着、Googleマップ運用、Instagram運用、営業支援、イベント企画まで、状況に応じて必要な支援を組み合わせます。
+      </p>
+      <div class="p-hero__meta js-fade">
+        <div class="p-hero__meta-item"><strong>34年</strong>広告・出版業での実績</div>
+        <div class="p-hero__meta-item"><strong>9つ</strong>の総合支援メニュー</div>
+        <div class="p-hero__meta-item"><strong>1つ</strong>の窓口で、集客から定着まで</div>
       </div>
-
-      <!-- TODO: 将来的に実写の業務イメージ画像へ差し替え可能です -->
-      <div class="p-hero__visual js-fade" aria-hidden="true">
-        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="商売名人のブランドカラーによる抽象グラフィック">
-          <defs>
-            <filter id="heroBlur" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="42"></feGaussianBlur>
-            </filter>
-            <filter id="heroGrain" x="0" y="0" width="100%" height="100%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"></feTurbulence>
-              <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.14  0 0 0 0 0.13  0 0 0 0 0.11  0 0 0 0.05 0"></feColorMatrix>
-            </filter>
-          </defs>
-
-          <g filter="url(#heroBlur)">
-            <path d="M110,40 C210,-10 320,30 345,130 C370,230 320,320 230,340 C140,360 60,320 45,230 C32,150 40,80 110,40 Z" fill="var(--color-indigo)" opacity="0.5"></path>
-            <path d="M240,190 C310,150 380,200 385,270 C390,350 320,410 250,395 C190,382 170,320 185,270 C192,240 205,208 240,190 Z" fill="var(--color-seal)" opacity="0.42" style="mix-blend-mode:multiply"></path>
-            <path d="M70,300 C130,275 195,300 205,360 C215,420 165,465 105,455 C55,447 30,400 40,360 C45,335 50,315 70,300 Z" fill="var(--color-moss)" opacity="0.38" style="mix-blend-mode:multiply"></path>
-          </g>
-
-          <rect x="0" y="0" width="400" height="500" filter="url(#heroGrain)" opacity="0.5"></rect>
-        </svg>
+      <div class="p-hero__actions js-fade">
+        <a href="/contact/" class="c-btn c-btn--primary">まずは相談する</a>
+        <a href="/service/" class="c-btn c-btn--outline">事業内容を見る</a>
       </div>
     </div>
   </section>
