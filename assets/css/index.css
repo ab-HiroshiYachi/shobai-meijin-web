@@ -64,6 +64,52 @@
   }
 }
 
+/* ---------- FV: 画像全体を表示するバナー型パターン ---------- */
+.p-hero__inner--stack {
+  display: block;
+}
+
+.p-hero__banner {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+.p-hero__banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.p-hero__inner--stack .p-hero__content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.p-hero__inner--stack .p-hero__kicker {
+  justify-content: center;
+}
+
+.p-hero__inner--stack .p-hero__lead {
+  margin: 30px auto 0;
+}
+
+.p-hero__inner--stack .p-hero__meta {
+  justify-content: center;
+}
+
+.p-hero__inner--stack .p-hero__actions {
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .p-hero__banner {
+    margin-bottom: 40px;
+  }
+}
+
 .p-hero__kicker {
   justify-content: flex-start;
   display: flex;
@@ -243,7 +289,7 @@
 
 .p-diagram__orbit {
   fill: none;
-  stroke: var(--color-border);
+  stroke: rgba(198, 161, 91, 0.4);
   stroke-width: 1;
   stroke-dasharray: 2 8;
 }
@@ -252,7 +298,7 @@
   fill: none;
   stroke: var(--color-seal);
   stroke-width: 1.5;
-  opacity: 0.45;
+  opacity: 0.75;
   stroke-linecap: round;
 }
 
@@ -287,9 +333,9 @@
 }
 
 .p-diagram__node-rect {
-  fill: var(--color-bg);
-  stroke: var(--color-border);
-  stroke-width: 1;
+  fill: var(--color-bg-soft);
+  stroke: rgba(198, 161, 91, 0.55);
+  stroke-width: 1.25;
 }
 
 .p-diagram__node-text {
