@@ -28,7 +28,7 @@
   aspect-ratio: 4 / 5;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 30px 70px -30px rgba(31, 41, 32, 0.4);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(198, 161, 91, 0.28);
 }
 
 .p-hero__media img {
@@ -268,7 +268,7 @@
 }
 
 .p-diagram__hub-text {
-  fill: var(--color-text-inverse);
+  fill: var(--color-on-gold);
   font-family: var(--font-serif);
   font-weight: 700;
   font-size: 25px;
@@ -278,7 +278,7 @@
 }
 
 .p-diagram__hub-caption {
-  fill: rgba(238, 231, 214, 0.6);
+  fill: rgba(23, 20, 15, 0.65);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 10px;
@@ -340,8 +340,8 @@
   font-family: var(--font-serif);
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: #D98F7C;
-  border: 1px solid rgba(217, 143, 124, 0.5);
+  color: var(--color-indigo);
+  border: 1px solid rgba(198, 161, 91, 0.5);
   padding: 8px 14px;
   text-align: center;
   white-space: nowrap;
@@ -420,9 +420,9 @@
 }
 
 .p-services__sub-item .mark {
-  color: #D98F7C;
+  color: var(--color-indigo);
   font-size: 0.8125rem;
-  opacity: 0.7;
+  opacity: 0.8;
   flex-shrink: 0;
   font-family: var(--font-serif);
 }
@@ -432,7 +432,7 @@
 }
 
 .p-services__sub-item:hover .label {
-  color: #F2DED4;
+  color: var(--color-indigo-deep);
 }
 
 .p-services__more {
@@ -448,7 +448,7 @@
 .p-services__more .c-btn--outline:hover {
   background-color: var(--color-text-inverse);
   border-color: var(--color-text-inverse);
-  color: var(--color-indigo-deep);
+  color: var(--color-on-gold);
 }
 
 @media (max-width: 767px) {
@@ -654,7 +654,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(43, 40, 35, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(198, 161, 91, 0.35);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -773,28 +773,29 @@
 /* ---------- CTAセクション ---------- */
 .p-cta {
   text-align: center;
-  background-color: var(--color-indigo-deep);
+  background-image: linear-gradient(155deg, var(--color-indigo-deep) 0%, var(--color-indigo) 100%);
 }
 
-.p-cta__title {
+.p-cta .p-cta__title {
   font-size: var(--fs-h2);
   margin-bottom: 24px;
+  color: var(--color-on-gold);
 }
 
-.p-cta__body {
+.p-cta .p-cta__body {
   max-width: 620px;
   margin: 0 auto;
   font-size: 1rem;
   line-height: 2.1;
-  color: rgba(238, 231, 214, 0.75);
+  color: rgba(23, 20, 15, 0.72);
 }
 
 .p-cta__actions {
   margin-top: 40px;
 }
 
-.p-cta__note {
+.p-cta .p-cta__note {
   margin-top: 24px;
   font-size: var(--fs-caption);
-  color: rgba(238, 231, 214, 0.55);
+  color: rgba(23, 20, 15, 0.55);
 }

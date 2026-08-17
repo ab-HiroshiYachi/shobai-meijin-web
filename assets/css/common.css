@@ -5,19 +5,20 @@
 
 /* ---------- デザイントークン ---------- */
 :root {
-  /* カラー（和紙 × インディゴ × 朱色の印章 / 明るめトーン） */
-  --color-bg: #FBF9F3;
-  --color-bg-soft: #F2EEE2;
-  --color-bg-deep: #16232C;
-  --color-bg-deep-soft: #1E2E38;
-  --color-text: #23211D;
-  --color-text-soft: #5B574C;
-  --color-text-inverse: #EEE7D6;
-  --color-border: rgba(35, 33, 29, 0.12);
-  --color-border-deep: rgba(238, 231, 214, 0.16);
-  --color-indigo: #2F5C86;
-  --color-indigo-deep: #1F3F5C;
-  --color-seal: #A83932;
+  /* カラー（黒 × 金 / 商人・武家をイメージしたラグジュアリートーン） */
+  --color-bg: #0D0C0A;
+  --color-bg-soft: #17140F;
+  --color-bg-deep: #050403;
+  --color-bg-deep-soft: #0F0B06;
+  --color-text: #F1E9D8;
+  --color-text-soft: #B7AC93;
+  --color-text-inverse: #F5EFE0;
+  --color-on-gold: #17140F;
+  --color-border: rgba(198, 161, 91, 0.24);
+  --color-border-deep: rgba(241, 233, 216, 0.14);
+  --color-indigo: #C6A15B;
+  --color-indigo-deep: #E3C27C;
+  --color-seal: #9E2B25;
   --color-moss: #5F6F4E;
   --color-white: #FFFFFF;
 
@@ -205,12 +206,13 @@ img {
 .c-btn--primary {
   background-color: var(--color-seal);
   color: var(--color-text-inverse);
-  box-shadow: 0 1px 2px rgba(22, 35, 44, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .c-btn--primary:hover {
   background-color: var(--color-indigo-deep);
-  box-shadow: 0 8px 20px rgba(22, 35, 44, 0.22);
+  color: var(--color-on-gold);
+  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.3);
 }
 
 .c-btn--outline {
@@ -221,7 +223,7 @@ img {
 
 .c-btn--outline:hover {
   background-color: var(--color-indigo);
-  color: var(--color-text-inverse);
+  color: var(--color-on-gold);
 }
 
 .l-section--dark .c-btn--outline {
@@ -232,7 +234,7 @@ img {
 .l-section--dark .c-btn--outline:hover {
   background-color: var(--color-text-inverse);
   border-color: var(--color-text-inverse);
-  color: var(--color-indigo-deep);
+  color: var(--color-on-gold);
 }
 
 /* ---------- カード ---------- */
@@ -303,7 +305,7 @@ img {
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  background-color: rgba(239, 233, 218, 0.88);
+  background-color: rgba(13, 12, 10, 0.88);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border);
 }
