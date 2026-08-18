@@ -23,7 +23,12 @@
   gap: 72px;
 }
 
+.p-hero__content {
+  grid-column: 1;
+}
+
 .p-hero__media {
+  grid-column: 2;
   position: relative;
   aspect-ratio: 4 / 5;
   border-radius: 18px;
@@ -632,6 +637,12 @@
   position: sticky;
   top: 110px;
   align-self: start;
+}
+
+@media (max-width: 900px) {
+  .p-greeting__card {
+    position: static;
+  }
 }
 
 .p-greeting__portrait {
