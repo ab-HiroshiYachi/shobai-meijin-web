@@ -567,6 +567,12 @@ img {
   }
 }
 
+/* ---------- CTAバンド（濃色帯・全ページ共通） ---------- */
+.p-cta {
+  text-align: center;
+  background-color: var(--color-indigo-deep);
+}
+
 /* ---------- スクロールフェードイン ---------- */
 .js-fade {
   opacity: 0;
