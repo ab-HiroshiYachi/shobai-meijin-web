@@ -553,6 +553,7 @@
 .p-page-cta__title {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  color: var(--color-text-inverse);
 }
 
 .p-page-cta__body {
