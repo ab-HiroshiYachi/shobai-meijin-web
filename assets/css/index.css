@@ -11,6 +11,16 @@
   overflow: hidden;
 }
 
+.p-hero + #news {
+  padding-top: 56px;
+}
+
+@media (max-width: 767px) {
+  .p-hero + #news {
+    padding-top: 40px;
+  }
+}
+
 .p-hero__inner {
   position: relative;
   z-index: 1;
