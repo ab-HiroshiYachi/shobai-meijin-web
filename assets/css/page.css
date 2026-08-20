@@ -18,7 +18,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.28em;
-  color: var(--color-seal);
+  color: var(--color-indigo);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -27,7 +27,7 @@
   content: "";
   width: 28px;
   height: 1px;
-  background-color: var(--color-seal);
+  background-color: var(--color-indigo);
 }
 
 .p-page-hero__title {
@@ -38,7 +38,7 @@
 .p-page-hero__lead {
   margin-top: 20px;
   max-width: 680px;
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 2;
   color: var(--color-text-soft);
 }
@@ -69,7 +69,7 @@
   content: "\201C";
   font-family: var(--font-serif);
   font-size: 1.4em;
-  color: var(--color-seal);
+  color: var(--color-indigo);
   opacity: 0.7;
   vertical-align: -0.08em;
 }
@@ -89,7 +89,7 @@
 }
 
 .p-philosophy__body p {
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 2.05;
   color: var(--color-text-soft);
   margin: 0 0 16px;
@@ -121,7 +121,7 @@
 }
 
 .p-prose p {
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 2.05;
   color: var(--color-text);
   margin: 0 0 22px;
@@ -136,7 +136,7 @@
   list-style: none;
   padding: 14px 0 14px 28px;
   position: relative;
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 1.9;
   border-bottom: 1px solid var(--color-border);
 }
@@ -149,7 +149,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--color-seal);
+  background-color: var(--color-indigo);
 }
 
 /* ---------- お知らせ一覧 ---------- */
@@ -264,7 +264,7 @@
   font-family: var(--font-serif);
   font-size: 1.875rem;
   font-weight: 700;
-  color: var(--color-seal);
+  color: var(--color-indigo);
   line-height: 1;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .p-values__item p {
-  font-size: 0.9375rem;
+  font-size: var(--fs-body);
   line-height: 1.9;
   color: var(--color-text-soft);
   margin: 0;
@@ -308,8 +308,8 @@
   font-family: var(--font-serif);
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--color-seal);
-  border: 1px solid rgba(168, 57, 50, 0.4);
+  color: var(--color-indigo);
+  border: 1px solid rgba(47, 92, 134, 0.4);
   padding: 8px 14px;
   display: inline-block;
   margin-bottom: 20px;
@@ -342,7 +342,7 @@
 
 .p-service-detail__row dd {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: var(--fs-body);
   line-height: 1.9;
   color: var(--color-text);
 }
@@ -391,7 +391,7 @@
 }
 
 .p-service-brief__card p {
-  font-size: 0.9063rem;
+  font-size: var(--fs-body);
   line-height: 1.85;
   color: var(--color-text-soft);
   margin: 0;
@@ -433,7 +433,7 @@
 
 .p-company-table__row dd {
   margin: 0;
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 1.9;
   color: var(--color-text);
 }
@@ -528,7 +528,7 @@
   gap: 10px;
   padding: 14px 16px;
   border: 1px solid var(--color-border);
-  font-size: 0.9063rem;
+  font-size: var(--fs-body);
   cursor: pointer;
   transition: border-color var(--transition-base);
 }
@@ -550,7 +550,7 @@
   gap: 12px;
   padding: 24px;
   background-color: var(--color-bg-soft);
-  font-size: 0.875rem;
+  font-size: var(--fs-body);
   line-height: 1.8;
 }
 
@@ -641,7 +641,7 @@
 .p-page-cta__body {
   max-width: 560px;
   margin: 0 auto 32px;
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 1.9;
   color: rgba(238, 231, 214, 0.75);
 }

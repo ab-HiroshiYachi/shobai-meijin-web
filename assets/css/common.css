@@ -11,7 +11,7 @@
   --color-bg-deep: #16232C;
   --color-bg-deep-soft: #1E2E38;
   --color-text: #23211D;
-  --color-text-soft: #5B574C;
+  --color-text-soft: #4A4640;
   --color-text-inverse: #EEE7D6;
   --color-border: rgba(35, 33, 29, 0.12);
   --color-border-deep: rgba(238, 231, 214, 0.16);
@@ -98,7 +98,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-seal);
+  outline: 2px solid var(--color-indigo);
   outline-offset: 3px;
 }
 
@@ -107,7 +107,7 @@ img {
 }
 
 ::selection {
-  background-color: var(--color-seal);
+  background-color: var(--color-indigo);
   color: #fff;
 }
 
@@ -153,7 +153,7 @@ img {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.28em;
-  color: var(--color-seal);
+  color: var(--color-indigo);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -162,7 +162,7 @@ img {
   content: "";
   width: 28px;
   height: 1px;
-  background-color: var(--color-seal);
+  background-color: var(--color-indigo);
 }
 
 .c-section-head__title {
@@ -171,7 +171,7 @@ img {
 
 .c-section-head__lead {
   margin-top: 20px;
-  font-size: 0.9688rem;
+  font-size: var(--fs-body);
   line-height: 2;
   max-width: 680px;
   margin-left: auto;
@@ -245,7 +245,7 @@ img {
 }
 
 .c-card:hover {
-  border-color: var(--color-seal);
+  border-color: var(--color-indigo);
 }
 
 /* ---------- タグ / ラベル ---------- */
@@ -381,7 +381,7 @@ img {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background-color: var(--color-seal);
+  background-color: var(--color-indigo);
   transition: width var(--transition-base);
 }
 
@@ -573,6 +573,57 @@ img {
 .p-cta {
   text-align: center;
   background-color: var(--color-indigo-deep);
+}
+
+/* ---------- モバイル固定CTA ---------- */
+.c-mobile-cta {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .c-mobile-cta {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .c-mobile-cta__item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 56px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+
+  .c-mobile-cta__item:first-child {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .c-mobile-cta__item--primary {
+    color: var(--color-text-inverse);
+    background-color: var(--color-seal);
+  }
+
+  .c-mobile-cta__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* ---------- スクロールフェードイン ---------- */
