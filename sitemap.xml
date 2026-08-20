@@ -26,6 +26,16 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.shobai-meijin.com/news/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.shobai-meijin.com/news/2026-corporate-site/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://www.shobai-meijin.com/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
